@@ -42,6 +42,34 @@ async def handle_basic_level(message: types.Message):
 async def handle_basic_level(message: types.Message):
 	await message.answer(text='Отлично! Теперь для изучения Среднего уровня выбери категорию английских слов!', reply_markup=kb12)
 
+@dp.message_handler(Text(equals="Эмоции"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM myself_hard_emotions_feelings')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Природа"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM myself_hard_nature')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Тело"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM myself_hard_body')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+
 @dp.message_handler(Text(equals="Одежда"))
 async def handle_basic_level(message: types.Message):
 		c.execute('SELECT * FROM myself_medium_clothes')
