@@ -68,7 +68,7 @@ async def handle_basic_level(message: types.Message):
 
 @dp.message_handler(Text(equals="Спорт"))
 async def handle_basic_level(message: types.Message):
-		c.execute('SELECT * FROM travel_local')
+		c.execute('SELECT * FROM prof_sport')
 		rows = c.fetchall()
 		for row in rows:
 			# Сохраним идентификатор каждого сообщения бота в список
@@ -77,7 +77,7 @@ async def handle_basic_level(message: types.Message):
 
 @dp.message_handler(Text(equals="Программирование"))
 async def handle_basic_level(message: types.Message):
-		c.execute('SELECT * FROM travel_local')
+		c.execute('SELECT * FROM prof_programmer')
 		rows = c.fetchall()
 		for row in rows:
 			# Сохраним идентификатор каждого сообщения бота в список
@@ -86,7 +86,7 @@ async def handle_basic_level(message: types.Message):
 
 @dp.message_handler(Text(equals="Гид"))
 async def handle_basic_level(message: types.Message):
-		c.execute('SELECT * FROM travel_local')
+		c.execute('SELECT * FROM prof_gids')
 		rows = c.fetchall()
 		for row in rows:
 			# Сохраним идентификатор каждого сообщения бота в список
@@ -95,7 +95,7 @@ async def handle_basic_level(message: types.Message):
 
 @dp.message_handler(Text(equals="Инженер"))
 async def handle_basic_level(message: types.Message):
-		c.execute('SELECT * FROM travel_local')
+		c.execute('SELECT * FROM prof_engineer')
 		rows = c.fetchall()
 		for row in rows:
 			# Сохраним идентификатор каждого сообщения бота в список
@@ -104,7 +104,7 @@ async def handle_basic_level(message: types.Message):
 
 @dp.message_handler(Text(equals="Экономист"))
 async def handle_basic_level(message: types.Message):
-		c.execute('SELECT * FROM travel_local')
+		c.execute('SELECT * FROM prof_economy')
 		rows = c.fetchall()
 		for row in rows:
 			# Сохраним идентификатор каждого сообщения бота в список
@@ -113,7 +113,7 @@ async def handle_basic_level(message: types.Message):
 
 @dp.message_handler(Text(equals="Стюарт"))
 async def handle_basic_level(message: types.Message):
-		c.execute('SELECT * FROM travel_local')
+		c.execute('SELECT * FROM prof_avia')
 		rows = c.fetchall()
 		for row in rows:
 			# Сохраним идентификатор каждого сообщения бота в список
