@@ -38,6 +38,10 @@ async def handle_basic_level(message: types.Message):
 async def handle_basic_level(message: types.Message):
 	await message.answer(text='Отлично! Теперь для изучения Среднего уровня выбери категорию английских слов!', reply_markup=kb10)
 
+@dp.message_handler(Text(equals="Профессиональный"))
+async def handle_basic_level(message: types.Message):
+	await message.answer(text='Отлично! Теперь для изучения Среднего уровня выбери категорию английских слов!', reply_markup=kb10)
+
 @dp.message_handler(Text(equals="Общение"))
 async def handle_basic_level(message: types.Message):
 		c.execute('SELECT * FROM myself_basic_communication')
