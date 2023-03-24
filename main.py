@@ -27,6 +27,15 @@ async def second_start(message: types.Message):
 async def catrgories(message: types.Message):
 	await message.answer(text='Отлично! Теперь для изучения категории "Для себя" требуется указать как ты оцениваешь свой уровень английского', reply_markup=kb3)
 
+@dp.message_handler(Text(equals="Для путешествия"))
+async def catrgories(message: types.Message):
+	await message.answer(text='Отлично! Теперь для изучения категории "Для путешествия" требуется указать что именно в путешествии ты хочешь узнать', reply_markup=kb13)
+
+@dp.message_handler(Text(equals="Для профессии"))
+async def catrgories(message: types.Message):
+	await message.answer(text='Отлично! Теперь для изучения категории "Для профессии" требуется указать какую сферу ты хочешь изучить', reply_markup=kb14)
+
+
 # Добавим список для хранения идентификаторов сообщений бота
 bot_messages = []
 
