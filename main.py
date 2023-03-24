@@ -39,6 +39,35 @@ async def catrgories(message: types.Message):
 # Добавим список для хранения идентификаторов сообщений бота
 bot_messages = []
 
+@dp.message_handler(Text(equals="Диалог"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_about_myself')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Вопросы для помощи"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_answer_for_help')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Места"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_local')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+
+
 @dp.message_handler(Text(equals="Базовый"))
 async def handle_basic_level(message: types.Message):
 	await message.answer(text='Отлично! Теперь для изучения Базового уровня выбери категорию английских слов!', reply_markup=kb10)
