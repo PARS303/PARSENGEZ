@@ -36,11 +36,47 @@ async def handle_basic_level(message: types.Message):
 
 @dp.message_handler(Text(equals="Средний"))
 async def handle_basic_level(message: types.Message):
-	await message.answer(text='Отлично! Теперь для изучения Среднего уровня выбери категорию английских слов!', reply_markup=kb10)
+	await message.answer(text='Отлично! Теперь для изучения Среднего уровня выбери категорию английских слов!', reply_markup=kb11)
 
 @dp.message_handler(Text(equals="Профессиональный"))
 async def handle_basic_level(message: types.Message):
-	await message.answer(text='Отлично! Теперь для изучения Среднего уровня выбери категорию английских слов!', reply_markup=kb10)
+	await message.answer(text='Отлично! Теперь для изучения Среднего уровня выбери категорию английских слов!', reply_markup=kb12)
+
+@dp.message_handler(Text(equals="Одежда"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM myself_medium_clothes')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Семья"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM myself_medium_family')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Хобби"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM myself_medium_hobbies')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Транспорт"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM myself_medium_transport')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
 
 @dp.message_handler(Text(equals="Общение"))
 async def handle_basic_level(message: types.Message):
