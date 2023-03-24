@@ -90,15 +90,15 @@ async def delete_bot_messages(message: types.Message):
 	await message.answer(text="Как на русском будет 'Dog' ", reply_markup=kb8)
 @dp.message_handler(Text(equals="Особняки"))
 async def delete_bot_messages(message: types.Message):
-	await message.answer(text="Ебать ты даун, я б тебя в садике трахнул",)
+	await message.answer(text="Не правильно")
 
 @dp.message_handler(Text(equals="Квартиры"))
 async def delete_bot_messages(message: types.Message):
-	await message.answer(text="Ебать ты даун, я б тебя в садике трахнул")
+	await message.answer(text="Не правильно")
 
 @dp.message_handler(Text(equals="Унитаз"))
 async def delete_bot_messages(message: types.Message):
-	await message.answer(text="Ебать ты даун, я б тебя в садике трахнул")
+	await message.answer(text="Не правильно")
 
 @dp.message_handler(Text(equals="Собака"))
 async def delete_bot_messages(message: types.Message):
@@ -116,7 +116,7 @@ async def delete_bot_messages(message: types.Message):
 
 @dp.message_handler(Text(equals="СКатЕртЬ"))
 async def delete_bot_messages(message: types.Message):
-	await message.answer(text="Ебать ты даун, я б тебя в садике трахнул")
+	await message.answer(text="Не правильно")
 
 @dp.message_handler(Text(equals="Папа андрея!?"))
 async def delete_bot_messages(message: types.Message):
