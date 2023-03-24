@@ -66,7 +66,59 @@ async def handle_basic_level(message: types.Message):
 			bot_message = await message.answer(row, reply_markup=kb5)
 			bot_messages.append(bot_message.message_id)
 
+@dp.message_handler(Text(equals="Спорт"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_local')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
 
+@dp.message_handler(Text(equals="Программирование"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_local')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Гид"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_local')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Инженер"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_local')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Экономист"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_local')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
+
+@dp.message_handler(Text(equals="Стюарт"))
+async def handle_basic_level(message: types.Message):
+		c.execute('SELECT * FROM travel_local')
+		rows = c.fetchall()
+		for row in rows:
+			# Сохраним идентификатор каждого сообщения бота в список
+			bot_message = await message.answer(row, reply_markup=kb5)
+			bot_messages.append(bot_message.message_id)
 
 @dp.message_handler(Text(equals="Базовый"))
 async def handle_basic_level(message: types.Message):
