@@ -674,6 +674,7 @@ async def handle_basic_level(message: types.Message):
 				rows2 = random.sample(rows, len(rows))
 				print(list(rows))
 
+#Кнопки
 				k = ReplyKeyboardMarkup(resize_keyboard=True)
 				b1 = KeyboardButton(text=rows2[1])
 				b2 = KeyboardButton(text=rows2[2])
@@ -682,7 +683,7 @@ async def handle_basic_level(message: types.Message):
 				b5 = KeyboardButton(text=rows2[0])
 				k.add(b1, b2, b3, b4, b5)
 
-
+				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
 				user.mode = 'test_body'
 
