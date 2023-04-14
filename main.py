@@ -674,7 +674,6 @@ async def handle_basic_level(message: types.Message):
 				rows2 = random.sample(rows, len(rows))
 				print(list(rows))
 
-#Кнопки
 				k = ReplyKeyboardMarkup(resize_keyboard=True)
 				b1 = KeyboardButton(text=rows2[1])
 				b2 = KeyboardButton(text=rows2[2])
@@ -2599,7 +2598,7 @@ async def test(message: types.Message):
 				else:
 					await message.answer(text='Не верно')
 
-
+#Test prog
 			if user.mode =='test_prog':
 				print('test')
 				c.execute(f'SELECT * FROM test_prof_programmer where id = {str(user.l)}')
