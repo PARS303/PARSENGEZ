@@ -682,7 +682,7 @@ async def handle_basic_level(message: types.Message):
 				b5 = KeyboardButton(text=rows2[0])
 				k.add(b1, b2, b3, b4, b5)
 
-				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
+
 
 				user.mode = 'test_body'
 
