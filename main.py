@@ -46,27 +46,6 @@ class User():
 
 users = []
 
-# communication_score = 1
-# dilog_score = 1
-# help_score = 1
-# eat_score = 1
-# place_score = 1
-# sport_score = 1
-# prog_score = 1
-# guide_score =1
-# enginere_score = 1
-# economy_score = 1
-# stuart_score = 1
-# emodji_score = 1
-# nature_score = 1
-# body_score = 1
-# clothes_score = 1
-# famaly_score = 1
-# hobby_score = 1
-# transport_score = 1
-# animal_score = 1
-# colors_score = 1
-
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
