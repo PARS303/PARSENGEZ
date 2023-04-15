@@ -161,7 +161,6 @@ async def handle_basic_level(message: types.Message):
 				rows = c.fetchone()
 				rows = rows[:-1]
 				rows2 = random.sample(rows, len(rows))
-				print(list(rows))
 
 				k = ReplyKeyboardMarkup(resize_keyboard=True)
 				b1 = KeyboardButton(text=rows2[1])
@@ -174,6 +173,7 @@ async def handle_basic_level(message: types.Message):
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
 				user.mode = 'test_dialog'
+
 
 @dp.message_handler(Text(equals="Вопросы для помощи"))
 async def handle_basic_level(message: types.Message):
