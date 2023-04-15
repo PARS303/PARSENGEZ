@@ -2126,12 +2126,9 @@ async def test(message: types.Message):
 					await message.answer(text='Не верно')
 
 			if user.mode =='test_hobbies':
-				print('test')
 				c.execute(f'SELECT * FROM test_myself_medium_hobbies where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				print(rows[user.i])
-				print(message.text)
 				if message.text == rows[user.i]:
 					user.i+=1
 					await message.answer(text ='Верно')
@@ -2171,6 +2168,7 @@ async def test(message: types.Message):
 							user.mode = None
 				else:
 					await message.answer(text='Не верно')
+
 
 			if user.mode =='test_family':
 				c.execute(f'SELECT * FROM test_myself_medium_family where id = {str(user.l)}')
