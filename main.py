@@ -2598,7 +2598,7 @@ async def test(message: types.Message):
 				else:
 					await message.answer(text='Не верно')
 
-#Test prog
+
 			if user.mode =='test_prog':
 				c.execute(f'SELECT * FROM test_prof_programmer where id = {str(user.l)}')
 				rows = c.fetchone()
