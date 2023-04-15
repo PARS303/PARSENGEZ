@@ -2033,11 +2033,9 @@ async def test(message: types.Message):
 					await message.answer(text='Не верно')
 
 			if user.mode =='test_eat':
-				print('test')
 				c.execute(f'SELECT * FROM test_myself_basic_eat where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				print(rows)
 				if message.text == rows[user.i]:
 					user.i+=1
 					await message.answer(text ='Верно')
