@@ -9,7 +9,7 @@ import random
 
 from kb import *
 
-bot = Bot("5802680214:AAEJqkpuS3k8cHYdQg9trqERtlCm8a2pLDk")
+bot = Bot("5907582871:AAHioz5ujhSLJs_k5JKhnCTRE_nrI4Ngipw")
 dp = Dispatcher(bot)
 
 conn = sqlite3.connect('engEz.db')
