@@ -877,7 +877,6 @@ async def handle_basic_level(message: types.Message):
 async def handle_basic_level(message: types.Message):
 	for user in users:
 		if user.id == message.from_user.id:
-			print(user.mode)
 			if user.mode == 'modul1':
 				c.execute(f'SELECT * FROM myself_basic_communication where id ="{user.communication_score}"')
 				rows = c.fetchone()
@@ -903,7 +902,6 @@ async def handle_basic_level(message: types.Message):
 				rows = c.fetchone()
 				rows = rows[:-1]
 				rows2 = random.sample(rows, len(rows))
-				print(list(rows))
 
 				k = ReplyKeyboardMarkup(resize_keyboard=True)
 				b1 = KeyboardButton(text=rows2[1])
