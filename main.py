@@ -1844,12 +1844,9 @@ async def test(message: types.Message):
 				await message.answer(text='Вы в главном меню', reply_markup=kb2)
 
 			if user.mode =='test_animal':
-				print('test')
 				c.execute(f'SELECT * FROM test_myself_basic_animals where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				print(rows[user.i])
-				print(message.text)
 				if message.text == rows[user.i]:
 					user.i+=1
 					await message.answer(text ='Верно')
@@ -1890,12 +1887,9 @@ async def test(message: types.Message):
 					await message.answer(text='Не верно')
 
 			if user.mode =='test_dialog':
-				print('test')
 				c.execute(f'SELECT * FROM test_travel_about_myself where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				print(rows[user.i])
-				print(message.text)
 				if message.text == rows[user.i]:
 					user.i+=1
 					await message.answer(text ='Верно')
