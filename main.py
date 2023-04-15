@@ -2455,12 +2455,9 @@ async def test(message: types.Message):
 					await message.answer(text='Не верно')
 
 			if user.mode =='test_economy':
-				print('test')
 				c.execute(f'SELECT * FROM test_prof_economy where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				print(rows[user.i])
-				print(message.text)
 				if message.text == rows[user.i]:
 					user.i+=1
 					await message.answer(text ='Верно')
@@ -2485,7 +2482,6 @@ async def test(message: types.Message):
 				kb = ReplyKeyboardMarkup(resize_keyboard=True)
 				b_menu = KeyboardButton(text="В главное меню")
 				kb.add(b_menu)
-				print(c.execute("SELECT * FROM prof_economy").fetchall()[user.i][1])
 				if message.text == c.execute("SELECT * FROM prof_economy").fetchall()[user.i][1]:
 					if user.i != (len(c.execute("SELECT * FROM prof_economy").fetchall())):
 						await message.answer(text='Верно')
@@ -2495,10 +2491,7 @@ async def test(message: types.Message):
 							text=f'Набирите слово {c.execute("SELECT * FROM prof_economy").fetchall()[user.i][2]}',
 							reply_markup=kb)
 						else:
-							await message.answer(text='Все примеры были решены')
-							await message.answer(text='Вы в главном меню', reply_markup=kb2)
 							user.i = 0
-							user.mode = None
 				else:
 					await message.answer(text='Не верно')
 
