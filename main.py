@@ -344,7 +344,6 @@ async def handle_basic_level(message: types.Message):
 				rows = c.fetchone()
 				rows = rows[:-1]
 				rows2 = random.sample(rows, len(rows))
-				print(list(rows))
 
 				k = ReplyKeyboardMarkup(resize_keyboard=True)
 				b1 = KeyboardButton(text=rows2[1])
