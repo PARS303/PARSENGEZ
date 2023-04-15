@@ -2600,12 +2600,9 @@ async def test(message: types.Message):
 
 #Test prog
 			if user.mode =='test_prog':
-				print('test')
 				c.execute(f'SELECT * FROM test_prof_programmer where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				print(rows[user.i])
-				print(message.text)
 				if message.text == rows[user.i]:
 					user.i+=1
 					await message.answer(text ='Верно')
@@ -2639,11 +2636,7 @@ async def test(message: types.Message):
 							text=f'Набирите слово {c.execute("SELECT * FROM prof_programmer").fetchall()[user.i][2]}',
 							reply_markup=kb)
 						else:
-							await message.answer(text='Все примеры были решены')
-							await message.answer(text='Вы в главном меню', reply_markup=kb2)
-
 							user.i = 0
-							user.mode = None
 				else:
 					await message.answer(text='Не верно')
 
