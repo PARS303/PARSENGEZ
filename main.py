@@ -1937,13 +1937,9 @@ async def test(message: types.Message):
 
 
 			if user.mode =='test_communication':
-				print('test')
 				c.execute(f'SELECT * FROM test_myself_basic_communication where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				print(rows[user.i])
-				print(message.text)
-				print(user.l)
 
 				if message.text == rows[user.i]:
 					user.i+=1
