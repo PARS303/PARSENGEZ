@@ -1363,7 +1363,6 @@ async def delete_bot_messages(message: types.Message):
 				user.body_score += 1
 				massage = logic.request_in_massage(rows)
 				if rows != None:
-					print(massage)
 					bot_message = await message.answer(massage, reply_markup=kb5)
 					bot_messages.append(bot_message.message_id)
 					bot_messages.append(bot_message.message_id)
@@ -1380,7 +1379,6 @@ async def delete_bot_messages(message: types.Message):
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
-					print(list(rows))
 
 					k = ReplyKeyboardMarkup(resize_keyboard=True)
 					b1 = KeyboardButton(text=rows2[0])
