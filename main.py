@@ -1430,6 +1430,7 @@ async def delete_bot_messages(message: types.Message):
 					user.mode = '0_test_nature'
 
 
+
 			if user.mode == 'emodji':
 				c.execute(f'SELECT * FROM myself_hard_emotions_feelings where id ="{user.emodji_score}"')
 				rows = c.fetchone()
