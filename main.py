@@ -2589,19 +2589,55 @@ async def test(message: types.Message):
 					await message.answer(text='Не угадали')
 				if user.i == len(rows):
 					user.i = 0
-					await message.answer(text='Вы в главном меню', reply_markup=kb2)
-					user.mode = None
+					user.l = random.randint(0,
+											(len(c.execute(f'SELECT * FROM test_travel_answer_for_help').fetchall()) - 1))
+
+					c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.l)}')
+					rows = c.fetchone()
+					rows = rows[:-1]
+					rows2 = random.sample(rows, len(rows))
+
+					k = ReplyKeyboardMarkup(resize_keyboard=True)
+					b1 = KeyboardButton(text=rows2[1])
+					b2 = KeyboardButton(text=rows2[2])
+					b3 = KeyboardButton(text=rows2[3])
+					b4 = KeyboardButton(text=rows2[4])
+					b5 = KeyboardButton(text=rows2[0])
+					b_menu = KeyboardButton(text="В главное меню")
+					k.add(b1, b2, b3, b4, b5,b_menu)
+
+					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_help':
 				c.execute(f'SELECT * FROM test_travel_answer_for_help_0 where id = {user.l}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
-
 					await message.answer(text='Верно', reply_markup=kb2)
-					user.mode = None
-				else:
-					await message.answer(text='Не угадали')
+
+					if user.i != len(c.execute(f'SELECT * FROM test_travel_answer_for_help_0').fetchall()):
+
+						user.l = random.randint(0, (
+								len(c.execute(f'SELECT * FROM test_travel_answer_for_help_0').fetchall()) - 1))
+
+						c.execute(f'SELECT * FROM test_travel_answer_for_help_0 where id = {user.i}')
+						rows = c.fetchone()
+						rows = rows[:-1]
+						rows2 = random.sample(rows[1:], len(rows[1:]))
+
+						k = ReplyKeyboardMarkup(resize_keyboard=True)
+						b1 = KeyboardButton(text=rows2[0])
+						b2 = KeyboardButton(text=rows2[1])
+						b3 = KeyboardButton(text=rows2[2])
+						b4 = KeyboardButton(text=rows2[3])
+						b5 = KeyboardButton(text='В главное меню')
+						k.add(b1, b2, b3, b4, b5)
+
+						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+						user.i+=1
+					else:
+						await message.answer(text='Вы успешно прошли тест')
+						user.i = 0
 			if user.mode == 'test_help_1':
 				kb = ReplyKeyboardMarkup(resize_keyboard=True)
 				b_menu = KeyboardButton(text="В главное меню")
