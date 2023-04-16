@@ -2607,6 +2607,7 @@ async def test(message: types.Message):
 					k.add(b1, b2, b3, b4, b5,b_menu)
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
+
 			if user.mode =='0_test_help':
 				c.execute(f'SELECT * FROM test_travel_answer_for_help_0 where id = {user.l}')
 				rows = c.fetchone()
