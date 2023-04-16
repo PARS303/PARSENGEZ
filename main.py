@@ -1727,6 +1727,23 @@ async def delete_bot_messages(message: types.Message):
 
 @dp.message_handler(content_types=['text'])
 async def test(message: types.Message):
+	if message.text == 'В главное меню':
+		flag = 0
+		for user in users:
+			if user.id == message.from_user.id:
+				flag = 1
+				user.mode = None
+				break
+		if flag == 0:
+			users.append(
+				User(id=message.from_user.id, communication_score=1, dialog_score=1, help_score=1, eat_score=1,
+					 place_score=1, sport_score=1, prog_score=1, guide_score=1, enginere_score=1,
+					 economy_score=1,
+					 stuart_score=1, emodji_score=1, nature_score=1, body_score=1, clothes_score=1,
+					 famaly_score=1,
+					 hobby_score=1,
+					 transport_score=1, animal_score=1, colors_score=1, mode=None, l=None, i=0))
+
 	for user in users:
 		if user.id == message.from_user.id:
 
@@ -1764,6 +1781,27 @@ async def test(message: types.Message):
 					user.mode = 'modul3'
 
 			if message.text == 'В главное меню':
+
+				flag = 0
+				for user in users:
+					if user.id == message.from_user.id:
+						flag = 1
+						user.mode = 'myself'
+						break
+				if flag == 0:
+					users.append(
+						User(id=message.from_user.id, communication_score=1, dialog_score=1, help_score=1, eat_score=1,
+							 place_score=1, sport_score=1, prog_score=1, guide_score=1, enginere_score=1,
+							 economy_score=1,
+							 stuart_score=1, emodji_score=1, nature_score=1, body_score=1, clothes_score=1,
+							 famaly_score=1,
+							 hobby_score=1,
+							 transport_score=1, animal_score=1, colors_score=1, mode='myself', l=None, i=0))
+				user.mode = None
+				await message.answer(text='Вы в главном меню', reply_markup=kb2)
+
+
+			if message.text == 'В главное меню':
 				user.mode = None
 				await message.answer(text='Вы в главном меню', reply_markup=kb2)
 
@@ -1778,8 +1816,24 @@ async def test(message: types.Message):
 					await message.answer(text='Не угадали')
 				if user.i == len(rows):
 					user.i = 0
-					await message.answer(text='Вы в главном меню', reply_markup=kb2)
-					user.mode = None
+					user.l = random.randint(0,
+											(len(c.execute(f'SELECT * FROM test_myself_basic_animals').fetchall()) - 1))
+
+					c.execute(f'SELECT * FROM test_myself_basic_animals where id = {str(user.l)}')
+					rows = c.fetchone()
+					rows = rows[:-1]
+					rows2 = random.sample(rows, len(rows))
+
+					k = ReplyKeyboardMarkup(resize_keyboard=True)
+					b1 = KeyboardButton(text=rows2[1])
+					b2 = KeyboardButton(text=rows2[2])
+					b3 = KeyboardButton(text=rows2[3])
+					b4 = KeyboardButton(text=rows2[4])
+					b5 = KeyboardButton(text=rows2[0])
+					b_menu = KeyboardButton(text="В главное меню")
+					k.add(b1, b2, b3, b4, b5,b_menu)
+
+					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_animal':
 				c.execute(f'SELECT * FROM test_myself_basic_animals_0 where id = {user.l}')
 				rows = c.fetchone()
@@ -1787,14 +1841,38 @@ async def test(message: types.Message):
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-					user.mode = None
+
+					if user.i != len(c.execute(f'SELECT * FROM test_myself_basic_animals_0').fetchall()):
+
+						user.l = random.randint(0, (
+								len(c.execute(f'SELECT * FROM test_myself_basic_animals_0').fetchall()) - 1))
+
+						c.execute(f'SELECT * FROM test_myself_basic_animals_0 where id = {user.i}')
+						rows = c.fetchone()
+						rows = rows[:-1]
+						rows2 = random.sample(rows[1:], len(rows[1:]))
+
+						k = ReplyKeyboardMarkup(resize_keyboard=True)
+						b1 = KeyboardButton(text=rows2[0])
+						b2 = KeyboardButton(text=rows2[1])
+						b3 = KeyboardButton(text=rows2[2])
+						b4 = KeyboardButton(text=rows2[3])
+						b5 = KeyboardButton(text='В главное меню')
+						k.add(b1, b2, b3, b4, b5)
+
+						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+						user.i+=1
+					else:
+						await message.answer(text='Вы успешно прошли тест')
+						user.i = 0
 				else:
 					await message.answer(text='Не угадали')
 			if user.mode == 'test_animal_1':
 				kb = ReplyKeyboardMarkup(resize_keyboard=True)
 				b_menu = KeyboardButton(text="В главное меню")
 				kb.add(b_menu)
-				if message.text == c.execute("SELECT * FROM myself_basic_animal").fetchall()[user.i][1]:
+
+				if str(message.text).lower().replace(' ','') == str(c.execute("SELECT * FROM myself_basic_animal").fetchall()[user.i][1]).lower().replace(' ',''):
 					if user.i != (len(c.execute("SELECT * FROM myself_basic_animal").fetchall())):
 						await message.answer(text='Верно')
 						user.i+=1
@@ -1803,10 +1881,10 @@ async def test(message: types.Message):
 							text=f'Набирите слово {c.execute("SELECT * FROM myself_basic_animal").fetchall()[user.i][2]}',
 							reply_markup=kb)
 						else:
-							await message.answer(text='Все примеры были решены')
-							await message.answer(text='Вы в главном меню', reply_markup=kb2)
 							user.i = 0
-							user.mode = None
+							await message.answer(
+							text=f'Набирите слово {c.execute("SELECT * FROM myself_basic_animal").fetchall()[user.i][2]}',
+							reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
 
