@@ -2606,7 +2606,7 @@ async def test(message: types.Message):
 				kb = ReplyKeyboardMarkup(resize_keyboard=True)
 				b_menu = KeyboardButton(text="В главное меню")
 				kb.add(b_menu)
-				if message.text == c.execute("SELECT * FROM travel_answer_for_help").fetchall()[user.i][1]:
+				if str(message.text).lower().replace(' ','') == str(c.execute("SELECT * FROM travel_answer_for_help").fetchall()[user.i][1]).lower().replace(' ',''):
 					if user.i != (len(c.execute("SELECT * FROM travel_answer_for_help").fetchall())):
 						await message.answer(text='Верно')
 						user.i+=1
@@ -2616,6 +2616,9 @@ async def test(message: types.Message):
 							reply_markup=kb)
 						else:
 							user.i = 0
+							await message.answer(
+								text=f'Набирите слово {c.execute("SELECT * FROM travel_answer_for_help").fetchall()[user.i][2]}',
+								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
 current_word_index = 0
