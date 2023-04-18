@@ -3150,25 +3150,20 @@ async def test(message: types.Message):
 					await message.answer(text='Не верно')
 
 			if user.mode =='test_sport':
-				if user.i >= len(c.execute(f'SELECT * FROM test_prof_sport').fetchall()) - 1 and user.l == (len(c.execute(f'SELECT * FROM test_prof_sport where id = {str(user.i)}').fetchone()) -2):
-					user.l = 0
-					user.i = 0
-					user.mode = None
-					await message.answer(text='Вы всё решили', reply_markup=kb2)
-					return
-				c.execute(f'SELECT * FROM test_prof_sport where id = {str(user.i)}')
+				c.execute(f'SELECT * FROM test_prof_sport where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				if message.text == rows[user.l]:
-					user.l+=1
+				if message.text == rows[user.i]:
+					user.i+=1
 					await message.answer(text ='Верно')
 				else:
 					await message.answer(text='Не угадали')
-				if user.l == len(rows):
-					user.i += 1
-					user.l = 0
+				if user.i == len(rows):
+					user.i = 0
+					user.l = random.randint(0,
+											(len(c.execute(f'SELECT * FROM test_prof_sport').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_prof_sport where id = {str(user.i)}')
+					c.execute(f'SELECT * FROM test_prof_sport where id = {str(user.l)}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows, len(rows))
@@ -3230,27 +3225,21 @@ async def test(message: types.Message):
 				else:
 					await message.answer(text='Не верно')
 
-
 			if user.mode =='test_place':
-				if user.i >= len(c.execute(f'SELECT * FROM test_travel_local').fetchall()) - 1 and user.l == (len(c.execute(f'SELECT * FROM test_travel_local where id = {str(user.i)}').fetchone()) -2):
-					user.l = 0
-					user.i = 0
-					user.mode = None
-					await message.answer(text='Вы всё решили', reply_markup=kb2)
-					return
-				c.execute(f'SELECT * FROM test_travel_local where id = {str(user.i)}')
+				c.execute(f'SELECT * FROM test_travel_local where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				if message.text == rows[user.l]:
-					user.l+=1
+				if message.text == rows[user.i]:
+					user.i+=1
 					await message.answer(text ='Верно')
 				else:
 					await message.answer(text='Не угадали')
-				if user.l == len(rows):
-					user.i += 1
-					user.l = 0
+				if user.i == len(rows):
+					user.i = 0
+					user.l = random.randint(0,
+											(len(c.execute(f'SELECT * FROM test_travel_local').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_travel_local where id = {str(user.i)}')
+					c.execute(f'SELECT * FROM test_travel_local where id = {str(user.l)}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows, len(rows))
@@ -3313,25 +3302,20 @@ async def test(message: types.Message):
 					await message.answer(text='Не верно')
 
 			if user.mode =='test_help':
-				if user.i >= len(c.execute(f'SELECT * FROM test_travel_answer_for_help').fetchall()) - 1 and user.l == (len(c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.i)}').fetchone()) -2):
-					user.l = 0
-					user.i = 0
-					user.mode = None
-					await message.answer(text='Вы всё решили', reply_markup=kb2)
-					return
-				c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.i)}')
+				c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				if message.text == rows[user.l]:
-					user.l+=1
+				if message.text == rows[user.i]:
+					user.i+=1
 					await message.answer(text ='Верно')
 				else:
 					await message.answer(text='Не угадали')
-				if user.l == len(rows):
-					user.i += 1
-					user.l = 0
+				if user.i == len(rows):
+					user.i = 0
+					user.l = random.randint(0,
+											(len(c.execute(f'SELECT * FROM test_travel_answer_for_help').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.i)}')
+					c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.l)}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows, len(rows))
