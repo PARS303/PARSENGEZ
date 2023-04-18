@@ -46,7 +46,6 @@ class User():
 
 users = []
 
-
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
 	await message.answer(text="Привет!\nЯ буду твоим учителем английского языка в Telegram\nМы будем общаться с помощью кнопок. Нажимай.", reply_markup=kb)
@@ -147,12 +146,12 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
 				user.mode = 'test_dialog'
-
 
 @dp.message_handler(Text(equals="Вопросы для помощи"))
 async def handle_basic_level(message: types.Message):
@@ -192,7 +191,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -236,7 +236,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -281,7 +282,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -327,7 +329,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -372,7 +375,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -418,7 +422,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -462,7 +467,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -506,7 +512,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -562,7 +569,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -606,7 +614,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -650,7 +659,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -696,7 +706,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -743,11 +754,13 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
 				user.mode = 'test_family'
+
 @dp.message_handler(Text(equals="Хобби"))
 async def handle_basic_level(message: types.Message):
 	for user in users:
@@ -787,7 +800,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -817,7 +831,6 @@ async def handle_basic_level(message: types.Message):
 					reply_markup=kb)
 
 				user.mode = 'test_transport_1'
-
 			if user.mode == 'modul3':
 				user.l = random.randint(0, (len(c.execute(f'SELECT * FROM test_myself_medium_transport').fetchall()) - 1))
 
@@ -832,7 +845,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -921,7 +935,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -967,7 +982,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -1012,7 +1028,8 @@ async def handle_basic_level(message: types.Message):
 				b3 = KeyboardButton(text=rows2[3])
 				b4 = KeyboardButton(text=rows2[4])
 				b5 = KeyboardButton(text=rows2[0])
-				k.add(b1, b2, b3, b4, b5)
+				b_menu = KeyboardButton(text="В главное меню")
+				k.add(b1, b2, b3, b4, b5, b_menu)
 
 				await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 
@@ -1038,9 +1055,8 @@ async def delete_bot_messages(message: types.Message):
 					bot_messages.clear()
 
 					await message.answer(text="Начинаем тест!")
-					user.l = random.randint(0, (len(c.execute(f'SELECT * FROM test_myself_basic_communication_0').fetchall()) -1 ))
 
-					c.execute(f'SELECT * FROM test_myself_basic_communication_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_basic_communication_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1054,7 +1070,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4,b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-
 					user.mode = '0_test_communication'
 
 			if user.mode == 'colors':
@@ -1072,10 +1087,8 @@ async def delete_bot_messages(message: types.Message):
 					bot_messages.clear()
 
 					await message.answer(text="Начинаем тест!")
-					user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_basic_colorandnumer_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_basic_colorandnumer_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_basic_colorandnumer_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1091,6 +1104,7 @@ async def delete_bot_messages(message: types.Message):
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
 
 					user.mode = '0_test_colorandnumer'
+
 			if user.mode == 'eat':
 				c.execute(f'SELECT * FROM myself_basic_eat where id ="{user.eat_score}"')
 				rows = c.fetchone()
@@ -1106,10 +1120,8 @@ async def delete_bot_messages(message: types.Message):
 					bot_messages.clear()
 
 					await message.answer(text="Начинаем тест!")
-					user.l = random.randint(0, (
-							len(c.execute(f'SELECT * FROM test_myself_basic_eat_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_basic_eat_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_basic_eat_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1126,7 +1138,6 @@ async def delete_bot_messages(message: types.Message):
 
 					user.mode = '0_test_eat'
 
-
 			if user.mode == 'animal':
 				c.execute(f'SELECT * FROM myself_basic_animal where id ="{user.animal_score}"')
 				rows = c.fetchone()
@@ -1142,10 +1153,8 @@ async def delete_bot_messages(message: types.Message):
 					bot_messages.clear()
 
 					await message.answer(text="Начинаем тест!")
-					user.l = random.randint(0, (
-							len(c.execute(f'SELECT * FROM test_myself_basic_animals_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_basic_animals_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_basic_animals_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1160,6 +1169,7 @@ async def delete_bot_messages(message: types.Message):
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
 
+					user.i+=1
 					user.mode = '0_test_animal'
 
 			if user.mode == 'transport':
@@ -1177,10 +1187,8 @@ async def delete_bot_messages(message: types.Message):
 					bot_messages.clear()
 
 					await message.answer(text="Начинаем тест!")
-					user.l = random.randint(0, (
-							len(c.execute(f'SELECT * FROM test_myself_medium_transport_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_medium_transport_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_medium_transport_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1195,6 +1203,7 @@ async def delete_bot_messages(message: types.Message):
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
 
+					user.i+=1
 					user.mode = '0_test_transport'
 
 			if user.mode == 'hobby':
@@ -1215,7 +1224,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_myself_medium_hobbies_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_medium_hobbies_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_medium_hobbies_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1229,6 +1238,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 					user.mode = '0_test_hobbies'
 
 			if user.mode == 'famaly':
@@ -1249,7 +1259,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_myself_medium_family_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_medium_family_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_medium_family_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1263,6 +1273,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_family'
 
@@ -1284,7 +1295,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_myself_medium_clothes_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_medium_clothes_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_medium_clothes_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1298,7 +1309,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-
+					user.i+=1
 					user.mode = '0_test_clothes'
 
 			if user.mode == 'body':
@@ -1319,7 +1330,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_myself_hard_body_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_hard_body_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_hard_body_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1333,6 +1344,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_body'
 
@@ -1354,7 +1366,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_myself_hard_nature_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_hard_nature_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_hard_nature_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1368,10 +1380,9 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_nature'
-
-
 
 			if user.mode == 'emodji':
 				c.execute(f'SELECT * FROM myself_hard_emotions_feelings where id ="{user.emodji_score}"')
@@ -1391,7 +1402,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1405,9 +1416,9 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_emodji'
-
 
 			if user.mode == 'stuart':
 				c.execute(f'SELECT * FROM prof_avia where id ="{user.stuart_score}"')
@@ -1427,7 +1438,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_prof_avia_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_prof_avia_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_prof_avia_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1441,6 +1452,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_stuart'
 
@@ -1462,7 +1474,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_prof_economy_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_prof_economy_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_prof_economy_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1476,6 +1488,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_economy'
 
@@ -1497,7 +1510,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_prof_engineer_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_prof_engineer_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_prof_engineer_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1511,9 +1524,9 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_enginere'
-
 
 			if user.mode == 'guide':
 				c.execute(f'SELECT * FROM prof_gids where id ="{user.guide_score}"')
@@ -1533,7 +1546,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_prof_gids_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_prof_gids_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_prof_gids_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1547,6 +1560,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_guide'
 
@@ -1568,7 +1582,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_prof_programmer_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_prof_programmer_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_prof_programmer_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1582,6 +1596,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_prog'
 
@@ -1603,7 +1618,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_prof_sport_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_prof_sport_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_prof_sport_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1617,6 +1632,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_sport'
 
@@ -1638,7 +1654,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_travel_local_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_travel_local_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_travel_local_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1652,6 +1668,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_place'
 
@@ -1673,7 +1690,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_travel_about_myself_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_travel_about_myself_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_travel_about_myself_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1687,6 +1704,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_dialog'
 
@@ -1708,7 +1726,7 @@ async def delete_bot_messages(message: types.Message):
 					user.l = random.randint(0, (
 							len(c.execute(f'SELECT * FROM test_travel_answer_for_help_0').fetchall()) - 1))
 
-					c.execute(f'SELECT * FROM test_travel_answer_for_help_0 where id = {user.l}')
+					c.execute(f'SELECT * FROM test_travel_answer_for_help_0 where id = {user.i}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows[1:], len(rows[1:]))
@@ -1722,6 +1740,7 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					user.i+=1
 
 					user.mode = '0_test_help'
 
@@ -1787,6 +1806,7 @@ async def test(message: types.Message):
 					if user.id == message.from_user.id:
 						flag = 1
 						user.mode = 'myself'
+						user.i=0
 						break
 				if flag == 0:
 					users.append(
@@ -1797,11 +1817,6 @@ async def test(message: types.Message):
 							 famaly_score=1,
 							 hobby_score=1,
 							 transport_score=1, animal_score=1, colors_score=1, mode='myself', l=None, i=0))
-				user.mode = None
-				await message.answer(text='Вы в главном меню', reply_markup=kb2)
-
-
-			if message.text == 'В главное меню':
 				user.mode = None
 				await message.answer(text='Вы в главном меню', reply_markup=kb2)
 
@@ -1835,17 +1850,15 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_animal':
-				c.execute(f'SELECT * FROM test_myself_basic_animals_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_basic_animals_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
+					user.i+=1
 
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_basic_animals_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_basic_animals_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_myself_basic_animals_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -1861,7 +1874,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -1918,12 +1930,13 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_dialog':
-				c.execute(f'SELECT * FROM test_travel_about_myself_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_travel_about_myself_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
+					user.i+=1
 
 					if user.i != len(c.execute(f'SELECT * FROM test_travel_about_myself_0').fetchall()):
 
@@ -1944,7 +1957,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -1969,7 +1981,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
 
 			if user.mode =='test_communication':
 				c.execute(f'SELECT * FROM test_myself_basic_communication where id = {str(user.l)}')
@@ -2002,18 +2013,13 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_communication':
-				c.execute(f'SELECT * FROM test_myself_basic_communication_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_basic_communication_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i +=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_basic_communication_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_basic_communication_0').fetchall()) - 1))
-
 						c.execute(f'SELECT * FROM test_myself_basic_communication_0 where id = {user.i}')
 						rows = c.fetchone()
 						rows = rows[:-1]
@@ -2028,7 +2034,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2084,17 +2089,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_colorandnumer':
-				c.execute(f'SELECT * FROM test_myself_basic_colorandnumer_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_basic_colorandnumer_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i += 1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_basic_colorandnumer_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_basic_colorandnumer_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_myself_basic_colorandnumer_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -2110,7 +2112,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2135,7 +2136,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
 
 			if user.mode =='test_eat':
 				c.execute(f'SELECT * FROM test_myself_basic_eat where id = {str(user.l)}')
@@ -2167,17 +2167,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_eat':
-				c.execute(f'SELECT * FROM test_myself_basic_eat_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_basic_eat_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_basic_eat_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_basic_eat_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_myself_basic_eat_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -2193,7 +2190,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i=0
@@ -2249,18 +2245,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_transport':
-				c.execute(f'SELECT * FROM test_myself_medium_transport_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_medium_transport_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_medium_transport_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_medium_transport_0').fetchall()) - 1))
-
 						c.execute(f'SELECT * FROM test_myself_medium_transport_0 where id = {user.i}')
 						rows = c.fetchone()
 						rows = rows[:-1]
@@ -2275,7 +2267,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2300,7 +2291,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
 
 			if user.mode =='test_hobbies':
 				c.execute(f'SELECT * FROM test_myself_medium_hobbies where id = {str(user.l)}')
@@ -2332,17 +2322,13 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_hobbies':
-				c.execute(f'SELECT * FROM test_myself_medium_hobbies_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_medium_hobbies_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_medium_hobbies_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_medium_hobbies_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_myself_medium_hobbies_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -2358,7 +2344,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2383,7 +2368,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
 
 			if user.mode =='test_family':
 				c.execute(f'SELECT * FROM test_myself_medium_family where id = {str(user.l)}')
@@ -2415,17 +2399,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_family':
-				c.execute(f'SELECT * FROM test_myself_medium_family_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_medium_family_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_medium_family_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_medium_family_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_myself_medium_family_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -2441,7 +2422,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2497,17 +2477,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_clothes':
-				c.execute(f'SELECT * FROM test_myself_medium_clothes_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_medium_clothes_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_medium_clothes_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_medium_clothes_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_myself_medium_clothes_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -2523,7 +2500,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2548,6 +2524,7 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
+
 			if user.mode =='test_body':
 				c.execute(f'SELECT * FROM test_myself_hard_body where id = {str(user.l)}')
 				rows = c.fetchone()
@@ -2578,13 +2555,13 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_body':
-				c.execute(f'SELECT * FROM test_myself_hard_body_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_hard_body_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_hard_body_0').fetchall()):
 
 						user.l = random.randint(0, (
@@ -2604,7 +2581,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2660,13 +2636,13 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_nature':
-				c.execute(f'SELECT * FROM test_myself_hard_nature_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_hard_nature_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_hard_nature_0').fetchall()):
 
 						user.l = random.randint(0, (
@@ -2686,7 +2662,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2711,8 +2686,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
-
 
 			if user.mode =='test_emodji':
 				c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings where id = {str(user.l)}')
@@ -2744,17 +2717,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_emodji':
-				c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -2770,7 +2740,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2795,7 +2764,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
 
 			if user.mode =='test_stuart':
 				c.execute(f'SELECT * FROM test_prof_avia where id = {str(user.l)}')
@@ -2827,17 +2795,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_stuart':
-				c.execute(f'SELECT * FROM test_prof_avia_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_prof_avia_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_prof_avia_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_prof_avia_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_prof_avia_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -2853,7 +2818,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2909,17 +2873,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_economy':
-				c.execute(f'SELECT * FROM test_prof_economy_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_prof_economy_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_prof_economy_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_prof_economy_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_prof_economy_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -2935,7 +2896,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -2991,17 +2951,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_enginere':
-				c.execute(f'SELECT * FROM test_prof_engineer_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_prof_engineer_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_prof_engineer_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_prof_engineer_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_prof_engineer_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -3017,7 +2974,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -3040,7 +2996,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
 
 			if user.mode =='test_guide':
 				c.execute(f'SELECT * FROM test_prof_gids where id = {str(user.l)}')
@@ -3072,17 +3027,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_guide':
-				c.execute(f'SELECT * FROM test_prof_gids_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_prof_gids_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_prof_gids_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_prof_gids_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_prof_gids_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -3098,7 +3050,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i=0
@@ -3121,7 +3072,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
 
 			if user.mode =='test_prog':
 				c.execute(f'SELECT * FROM test_prof_programmer where id = {str(user.l)}')
@@ -3153,17 +3103,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_prog':
-				c.execute(f'SELECT * FROM test_prof_programmer_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_prof_programmer_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_prof_programmer_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_prof_programmer_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_prof_programmer_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -3179,7 +3126,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -3233,17 +3179,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_sport':
-				c.execute(f'SELECT * FROM test_prof_sport_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_prof_sport_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_prof_sport_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_prof_sport_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_prof_sport_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -3259,7 +3202,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -3284,20 +3226,25 @@ async def test(message: types.Message):
 					await message.answer(text='Не верно')
 
 			if user.mode =='test_place':
-				c.execute(f'SELECT * FROM test_travel_local where id = {str(user.l)}')
+				if user.i >= len(c.execute(f'SELECT * FROM test_travel_local').fetchall()) - 1 and user.l == (len(c.execute(f'SELECT * FROM test_travel_local where id = {str(user.i)}').fetchone()) -2):
+					user.l = 0
+					user.i = 0
+					user.mode = None
+					await message.answer(text='Вы всё решили', reply_markup=kb2)
+					return
+				c.execute(f'SELECT * FROM test_travel_local where id = {str(user.i)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				if message.text == rows[user.i]:
-					user.i+=1
+				if message.text == rows[user.l]:
+					user.l+=1
 					await message.answer(text ='Верно')
 				else:
 					await message.answer(text='Не угадали')
-				if user.i == len(rows):
-					user.i = 0
-					user.l = random.randint(0,
-											(len(c.execute(f'SELECT * FROM test_travel_local').fetchall()) - 1))
+				if user.l == len(rows):
+					user.i += 1
+					user.l = 0
 
-					c.execute(f'SELECT * FROM test_travel_local where id = {str(user.l)}')
+					c.execute(f'SELECT * FROM test_travel_local where id = {str(user.i)}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows, len(rows))
@@ -3313,17 +3260,14 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_place':
-				c.execute(f'SELECT * FROM test_travel_local_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_travel_local_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_travel_local_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_travel_local_0').fetchall()) - 1))
 
 						c.execute(f'SELECT * FROM test_travel_local_0 where id = {user.i}')
 						rows = c.fetchone()
@@ -3339,7 +3283,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
@@ -3363,22 +3306,26 @@ async def test(message: types.Message):
 				else:
 					await message.answer(text='Не верно')
 
-
 			if user.mode =='test_help':
-				c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.l)}')
+				if user.i >= len(c.execute(f'SELECT * FROM test_travel_answer_for_help').fetchall()) - 1 and user.l == (len(c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.i)}').fetchone()) -2):
+					user.l = 0
+					user.i = 0
+					user.mode = None
+					await message.answer(text='Вы всё решили', reply_markup=kb2)
+					return
+				c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.i)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
-				if message.text == rows[user.i]:
-					user.i+=1
+				if message.text == rows[user.l]:
+					user.l+=1
 					await message.answer(text ='Верно')
 				else:
 					await message.answer(text='Не угадали')
-				if user.i == len(rows):
-					user.i = 0
-					user.l = random.randint(0,
-											(len(c.execute(f'SELECT * FROM test_travel_answer_for_help').fetchall()) - 1))
+				if user.l == len(rows):
+					user.i += 1
+					user.l = 0
 
-					c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.l)}')
+					c.execute(f'SELECT * FROM test_travel_answer_for_help where id = {str(user.i)}')
 					rows = c.fetchone()
 					rows = rows[:-1]
 					rows2 = random.sample(rows, len(rows))
@@ -3393,20 +3340,15 @@ async def test(message: types.Message):
 					k.add(b1, b2, b3, b4, b5,b_menu)
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
-
 			if user.mode =='0_test_help':
-				c.execute(f'SELECT * FROM test_travel_answer_for_help_0 where id = {user.l}')
+				c.execute(f'SELECT * FROM test_travel_answer_for_help_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 
 				if message.text == rows[1]:
 					await message.answer(text='Верно', reply_markup=kb2)
-
+					user.i+=1
 					if user.i != len(c.execute(f'SELECT * FROM test_travel_answer_for_help_0').fetchall()):
-
-						user.l = random.randint(0, (
-								len(c.execute(f'SELECT * FROM test_travel_answer_for_help_0').fetchall()) - 1))
-
 						c.execute(f'SELECT * FROM test_travel_answer_for_help_0 where id = {user.i}')
 						rows = c.fetchone()
 						rows = rows[:-1]
@@ -3421,7 +3363,6 @@ async def test(message: types.Message):
 						k.add(b1, b2, b3, b4, b5)
 
 						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-						user.i+=1
 					else:
 						await message.answer(text='Вы успешно прошли тест')
 						user.i = 0
