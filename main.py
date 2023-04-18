@@ -1749,7 +1749,7 @@ async def test(message: types.Message):
 	for user in users:
 		if user.id == message.from_user.id:
 
-			if message.text == 'Модуль1':
+			if message.text == 'Изучение слов':
 				if user.mode == 'myself':
 					await message.answer(text='Выберите уровень', reply_markup=kb3)
 					user.mode = 'modul1'
