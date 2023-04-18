@@ -2477,6 +2477,7 @@ async def test(message: types.Message):
 
 					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
 			if user.mode =='0_test_clothes':
+				print(user.i)
 				c.execute(f'SELECT * FROM test_myself_medium_clothes_0 where id = {user.i}')
 				rows = c.fetchone()
 				rows = rows[:-1]
