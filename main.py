@@ -556,7 +556,9 @@ async def handle_basic_level(message: types.Message):
 				user.mode = 'test_emodji_1'
 
 			if user.mode == 'modul3':
-				c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings where id = {str(user.i)}')
+				user.l = random.randint(0, (len(c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings').fetchall()) - 1))
+
+				c.execute(f'SELECT * FROM test_myself_hard_emotions_feelings where id = {str(user.l)}')
 				rows = c.fetchone()
 				rows = rows[:-1]
 				rows2 = random.sample(rows, len(rows))
