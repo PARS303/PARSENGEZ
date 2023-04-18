@@ -9,7 +9,7 @@ import random
 
 from kb import *
 
-bot = Bot("5907582871:AAHioz5ujhSLJs_k5JKhnCTRE_nrI4Ngipw")
+bot = Bot("5802680214:AAEJqkpuS3k8cHYdQg9trqERtlCm8a2pLDk")
 dp = Dispatcher(bot)
 
 conn = sqlite3.connect('engEz.db')
@@ -1169,7 +1169,6 @@ async def delete_bot_messages(message: types.Message):
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
 
-					user.i+=1
 					user.mode = '0_test_animal'
 
 			if user.mode == 'transport':
@@ -1203,7 +1202,6 @@ async def delete_bot_messages(message: types.Message):
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
 
-					user.i+=1
 					user.mode = '0_test_transport'
 
 			if user.mode == 'hobby':
@@ -1238,7 +1236,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 					user.mode = '0_test_hobbies'
 
 			if user.mode == 'famaly':
@@ -1273,7 +1270,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_family'
 
@@ -1309,7 +1305,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 					user.mode = '0_test_clothes'
 
 			if user.mode == 'body':
@@ -1344,7 +1339,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_body'
 
@@ -1380,7 +1374,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_nature'
 
@@ -1416,7 +1409,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_emodji'
 
@@ -1452,7 +1444,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_stuart'
 
@@ -1488,7 +1479,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_economy'
 
@@ -1524,7 +1514,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_enginere'
 
@@ -1560,7 +1549,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_guide'
 
@@ -1596,7 +1584,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_prog'
 
@@ -1632,7 +1619,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_sport'
 
@@ -1668,7 +1654,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_place'
 
@@ -1704,7 +1689,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_dialog'
 
@@ -1740,7 +1724,6 @@ async def delete_bot_messages(message: types.Message):
 					k.add(b1, b2, b3, b4, b5)
 
 					await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
-					user.i+=1
 
 					user.mode = '0_test_help'
 
@@ -2921,6 +2904,7 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
+
 			if user.mode =='test_enginere':
 				c.execute(f'SELECT * FROM test_prof_engineer where id = {str(user.l)}')
 				rows = c.fetchone()
@@ -3145,6 +3129,82 @@ async def test(message: types.Message):
 							user.i = 0
 							await message.answer(
 								text=f'Набирите слово {c.execute("SELECT * FROM prof_programmer").fetchall()[user.i][2]}',
+								reply_markup=kb)
+				else:
+					await message.answer(text='Не верно')
+
+			if user.mode =='test_sport':
+				c.execute(f'SELECT * FROM test_prof_sport where id = {str(user.l)}')
+				rows = c.fetchone()
+				rows = rows[:-1]
+				if message.text == rows[user.i]:
+					user.i+=1
+					await message.answer(text ='Верно')
+				else:
+					await message.answer(text='Не угадали')
+				if user.i == len(rows):
+					user.i = 0
+					user.l = random.randint(0,
+											(len(c.execute(f'SELECT * FROM test_prof_sport').fetchall()) - 1))
+
+					c.execute(f'SELECT * FROM test_prof_sport where id = {str(user.l)}')
+					rows = c.fetchone()
+					rows = rows[:-1]
+					rows2 = random.sample(rows, len(rows))
+
+					k = ReplyKeyboardMarkup(resize_keyboard=True)
+					b1 = KeyboardButton(text=rows2[1])
+					b2 = KeyboardButton(text=rows2[2])
+					b3 = KeyboardButton(text=rows2[3])
+					b4 = KeyboardButton(text=rows2[4])
+					b5 = KeyboardButton(text=rows2[0])
+					b_menu = KeyboardButton(text="В главное меню")
+					k.add(b1, b2, b3, b4, b5,b_menu)
+
+					await message.answer(text="Составьте верное предложение из данных слов", reply_markup=k)
+			if user.mode =='0_test_sport':
+				c.execute(f'SELECT * FROM test_prof_sport_0 where id = {user.i}')
+				rows = c.fetchone()
+				rows = rows[:-1]
+
+				if message.text == rows[1]:
+					await message.answer(text='Верно', reply_markup=kb2)
+					user.i+=1
+					if user.i != len(c.execute(f'SELECT * FROM test_prof_sport_0').fetchall()):
+
+						c.execute(f'SELECT * FROM test_prof_sport_0 where id = {user.i}')
+						rows = c.fetchone()
+						rows = rows[:-1]
+						rows2 = random.sample(rows[1:], len(rows[1:]))
+
+						k = ReplyKeyboardMarkup(resize_keyboard=True)
+						b1 = KeyboardButton(text=rows2[0])
+						b2 = KeyboardButton(text=rows2[1])
+						b3 = KeyboardButton(text=rows2[2])
+						b4 = KeyboardButton(text=rows2[3])
+						b5 = KeyboardButton(text='В главное меню')
+						k.add(b1, b2, b3, b4, b5)
+
+						await message.answer(text=f"Перевидите слово {rows[0]}", reply_markup=k)
+					else:
+						await message.answer(text='Вы успешно прошли тест')
+						user.i = 0
+			if user.mode == 'test_sport_1':
+				kb = ReplyKeyboardMarkup(resize_keyboard=True)
+				b_menu = KeyboardButton(text="В главное меню")
+				kb.add(b_menu)
+				if str(message.text).lower().replace(' ','') == str(c.execute("SELECT * FROM prof_sport").fetchall()[user.i][1]).lower().replace(' ',''):
+					if user.i != (len(c.execute("SELECT * FROM prof_sport").fetchall())):
+						await message.answer(text='Верно')
+						user.i+=1
+						if user.i != (len(c.execute("SELECT * FROM prof_sport").fetchall())):
+							await message.answer(
+							text=f'Набирите слово {c.execute("SELECT * FROM prof_sport").fetchall()[user.i][2]}',
+							reply_markup=kb)
+						else:
+							user.i = 0
+							await message.answer(
+								text=f'Набирите слово {c.execute("SELECT * FROM prof_sport").fetchall()[user.i][2]}',
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
