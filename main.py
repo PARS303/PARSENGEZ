@@ -1760,7 +1760,7 @@ async def test(message: types.Message):
 					await message.answer(text='Выберите категорию', reply_markup=kb14)
 					user.mode = 'modul1'
 
-			if message.text == 'Модуль2':
+			if message.text == 'Написание слов':
 				if user.mode == 'myself':
 					await message.answer(text='Выберите уровень', reply_markup=kb3)
 					user.mode = 'modul2'
