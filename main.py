@@ -2920,7 +2920,6 @@ async def test(message: types.Message):
 								reply_markup=kb)
 				else:
 					await message.answer(text='Не верно')
-
 			if user.mode =='test_enginere':
 				c.execute(f'SELECT * FROM test_prof_engineer where id = {str(user.l)}')
 				rows = c.fetchone()
